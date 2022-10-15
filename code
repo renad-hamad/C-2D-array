@@ -1,0 +1,74 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    //6.Take 10 integer inputs from user and store them in an 2Darray of size 2 x 5. 
+int arr[2][5];
+cout<<"Enter 10 elements for 2D array\n"; 
+    
+    for(int i=0; i<2 ; i++) // row
+    {
+    for(int j=0 ; j<5; j++) // column
+    cin>>arr[i][j];
+    }
+cout<<"elements of the 2D array are =\n";
+for(int i=0; i<2; i++)
+{
+    for(int j=0; j<5; j++)
+    {
+        cout<<arr[i][j]<<"\t";
+    }
+    cout<<"\n";
+}
+    // Again ask user to give a number. Now, tell user whether that number is present in array or not  
+    int  x;
+	   cout<<"\nGive any number to check if it in the array or not=";
+	   cout<<"\n\n       NOTE: THE PROGRAM WILL MAKE SKIP IF IS IT NOT IN ARRAY\n";
+    cin>>x;
+    
+             for(int i=0; i<2; i++)
+{
+    for(int j=0; j<5; j++)
+    {
+		if(x==arr[i][j])
+            {
+             cout<<"\n=("<<x<<")is in the array \n\n ";
+        }
+         }
+		}
+//and check whether it is even or not
+  if (x%2 ==0)  
+  {
+  cout<<"\n\n("<<x<<")is even \n\n";
+  }
+  else 
+  cout<<"\n\n("<<x<<")is odd \n\n ";
+  //Separate the elements in the array as even and odd numbers lists. 
+  int even[10], odd[10],r=0,h=0;
+    for(int i=0; i<2 ; i++) // row
+  {
+    for(int j=0 ; j<5; j++) // column       
+{
+          if(arr[i][j] %2 ==0)
+     {
+        even[r] = arr[i][j]; 
+        r++;
+        
+     }
+    else
+     {
+        odd[h] = arr[i][j];
+        h++;
+     }
+}
+  }
+    
+cout<<"\nThe even elements of the array are =\n";
+for(int i=0 ; i<r; i++)
+    cout<<even[i]<<"\t";
+    
+cout<<"\nThe elements of odd array are =\n";
+for(int i=0 ; i<h; i++)
+    cout<<odd[i]<<"\t";
+
+}
